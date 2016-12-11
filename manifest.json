@@ -1,0 +1,37 @@
+{
+  "name": "Rainman",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "study.163.com video downloader.",
+  // "homepage_url": "https://github.com/j-delaney/back-to-backspace",
+  "browser_action": {
+    "default_icon": "icons/icon.png",
+    "default_popup": "src/popup.html"
+  },
+  "minimum_chrome_version": "52",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*/", "https://*/*/",
+    // "http://study.163.com/*", "https://study.163.com/*",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "downloads"
+  ],
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ],
+    "persistent": true
+  },
+   "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["http://study.163.com/*", "https://study.163.com/*"],
+      "js": ["src/content.js"]
+    }
+  ]
+}
