@@ -14,7 +14,7 @@ var sectionInterval = setInterval(function () {
   if (!chapterList) return;
 
   chapterList.onclick = function (event) {
-    var filename = event.target.innerText;
+    var filename = toVaildFileName(event.target.innerText);
     if (filename) {
       chrome.storage.local.set({ filename: filename + '.flv' });
       clearInterval(sectionInterval);
