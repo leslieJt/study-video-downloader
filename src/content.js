@@ -21,3 +21,8 @@ var sectionInterval = setInterval(function () {
     }
   }
 });
+
+function toVaildFileName(filename) {
+  if (!filename) return
+  return filename.toLocaleString().replace(/[\<\>\:\/\\\|\?\*]/g, '');
+}
