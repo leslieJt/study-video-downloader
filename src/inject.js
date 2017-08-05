@@ -1,6 +1,6 @@
-var list = document.getElementById('list');
+const list = document.getElementById('list')
 list.textContent = '';
-var error = document.getElementById('error');
+const error = document.getElementById('error')
 
 chrome.storage.local.get('url', function (url) {
   if (!url || !url.url) {
@@ -10,7 +10,7 @@ chrome.storage.local.get('url', function (url) {
     error.style.display = 'none';
     list.style.display = 'block';
 
-    var urlInfo = url.url;
+    const urlInfo = url.url
 
     urlInfo.forEach(function (info) {
       if (!info.length) return;
@@ -24,16 +24,16 @@ chrome.storage.local.get('url', function (url) {
       // }
 
       if (info.from === 'response') {
-        var li = document.createElement('div');
+        const li = document.createElement('div')
         li.className = 'item response';
-        var span = document.createElement('span');
+        const span = document.createElement('span')
         chrome.storage.local.get('filename', function (file) {
           span.title = info.address;
           span.textContent = file.filename;
         });
         li.appendChild(span);
 
-        var len = document.createElement('div');
+        const len = document.createElement('div')
         len.className = 'length';
         len.textContent = '' + info.length + 'MB';
         li.appendChild(len);
