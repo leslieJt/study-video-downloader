@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "chrome": true
+  },
+  "rules": {
+    "no-param-reassign": "off"
+  }
+}

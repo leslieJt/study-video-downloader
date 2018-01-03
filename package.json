@@ -1,0 +1,24 @@
+{
+  "name": "study-video-downloader",
+  "version": "1.0.0",
+  "description": "网易云课堂 当前页视频 下载",
+  "main": "background.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartyJiang/study-video-downloader.git"
+  },
+  "keywords": ["webExtension"],
+  "author": "MartyJiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MartyJiang/study-video-downloader/issues"
+  },
+  "homepage": "https://github.com/MartyJiang/study-video-downloader#readme",
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}

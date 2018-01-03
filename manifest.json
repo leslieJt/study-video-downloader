@@ -1,41 +1,32 @@
 {
-  "name": "Rainman",
+  "name": "163Downloader",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "study.163.com video downloader.",
-  "browser_action": {
-    "default_icon": "icons/icon.png",
-    "default_popup": "src/popup.html"
-  },
   "minimum_chrome_version": "52",
   "icons": {
-    "48": "icons/icon.png"
+    "48": "icons/download-gray.png"
   },
   "permissions": [
     "tabs",
-    "http://*/*/",
-    "https://*/*/",
+    "*://*.study.163.com/*",
     "webRequest",
     "webRequestBlocking",
     "storage",
-    "downloads"
+    "downloads",
+    "notifications"
   ],
   "background": {
-    "scripts": [
-      "src/background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": true
   },
   "content_scripts": [
     {
-      "run_at": "document_end",
-      "matches": [
-        "http://study.163.com/*",
-        "https://study.163.com/*"
-      ],
-      "js": [
-        "src/content.js"
-      ]
+      "run_at": "document_idle",
+      "matches": ["*://study.163.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
     }
-  ]
+  ],
+  "web_accessible_resources": ["icons/download-white.png"]
 }
