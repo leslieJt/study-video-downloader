@@ -1,4 +1,14 @@
 (() => {
+  function toValidFileName(name, removeSpace = true) {
+    if (typeof name !== 'string') return '';
+
+    const reg = new RegExp(
+      `(~|#|%|&|\\*|{|}|\\|:|<|>|\\?|？|\\/|\\||"${removeSpace ? '|\\s' : ''})`,
+      'g'
+    );
+    return name.replace(reg, '');
+  }
+
   function getLessonInfoFromUrl(url) {
     if (!url) return '';
 
@@ -58,9 +68,11 @@
         getCurrentTabStorageInfo(({ value }) => {
           if (!value) return;
 
+          const filename = toValidFileName(`${value.title}.flv`);
+
           chrome.downloads.download({
             url: value.videoUrl,
-            filename: `${value.title}.flv`,
+            filename,
             saveAs: true
           });
         });
