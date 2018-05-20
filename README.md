@@ -1,5 +1,7 @@
 # 安装
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/leslieJt/study-video-downloader.svg)](https://greenkeeper.io/)
+
 网易云课堂 当前页视频 下载
 
 ## 基本逻辑
